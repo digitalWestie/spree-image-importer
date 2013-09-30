@@ -1,0 +1,18 @@
+<h1>Import Images</h1>
+<%= @errors %>
+
+<%= form_tag main_app.admin_image_importer_path(), :method => :post do |f| %>
+
+  <%= label_tag "import_url", "Zip File URL" %>
+  <%= text_field_tag "import_url"  %>
+  <br/>
+  <%= label_tag "add" %>
+  <%= radio_button_tag "add_replace_skip", "add" %>
+  <%= label_tag "replace" %>
+  <%= radio_button_tag "add_replace_skip", "replace" %>
+  <%= label_tag "skip" %>
+  <%= radio_button_tag "add_replace_skip", "skip" %>
+
+  <p><%= submit_tag "Import" %></p>
+
+<% end %>
