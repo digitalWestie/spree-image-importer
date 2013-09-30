@@ -17,7 +17,7 @@ class Admin::ImageImporterController < Spree::Admin::BaseController
       render :index
     else
       ImageImporter.delay.import(products, location, replace, skip)
-      redirect_to main_app.admin_image_importer_path(), :notice => "Added import to worker queue."
+      redirect_to admin_image_importer_path(), :notice => "Added import to worker queue."
     end
   end
 
